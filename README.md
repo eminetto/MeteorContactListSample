@@ -1,0 +1,4 @@
+MeteorContactListSample
+=======================
+
+Meteor sample application
