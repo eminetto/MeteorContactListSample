@@ -1,0 +1,35 @@
+<head>
+  <title>ContactList</title>
+</head>
+
+<body>
+  {{> add_contact}}
+
+  {{> contacts}}
+
+
+</body>
+
+<template name="add_contact">
+  <h3>{{action}} contact</h3>
+  <div id="new-contact">
+    <input type="hidden" id="id" name="id">
+    Name: <input type="text" name="name" id="name"><br>
+    E-mail: <input type="text" name="email" id="email"><br>
+    <input type="button" id="actionButton" value="{{action}}">
+  </div>
+</template>
+
+<template name="contacts">
+  <h3>Contacts</h3>
+  <div id="contacts">
+    {{#each contact_list}}
+      <div class="contact">
+        {{name}} - {{email}} 
+        <input type="button" class="edit" id="{{_id}}" value="edit">
+        <input type="button" class="del" id="{{_id}}" value="del">
+        <br>
+      </div>
+    {{/each}}
+  </div>
+</template>
